@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, ModalController } from '@ionic/angular';
+import { AboutPage } from '../about/about.page';
 
 @Component({
   selector: 'app-tab1',
@@ -9,5 +10,15 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule],
 })
 export class Tab1Page {
-  constructor() {}
+  constructor(private modal: ModalController) {
+
+  }
+
+  async openAbout() {
+    const modal = await this.modal.create({
+      component: AboutPage,
+    });
+    
+    modal.present();
+  }
 }
