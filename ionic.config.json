@@ -1,0 +1,7 @@
+{
+  "name": "sept23",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
