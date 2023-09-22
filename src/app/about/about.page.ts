@@ -12,13 +12,13 @@ import { IonicModule, ModalController } from '@ionic/angular';
 })
 export class AboutPage implements OnInit {
 
-  constructor(private modal: ModalController) { }
+  constructor(private modal1: ModalController) { }
 
   ngOnInit() {
   }
 
   closeAbout() {
-    this.modal.dismiss();
+    this.modal1.dismiss();
   }
 
 }

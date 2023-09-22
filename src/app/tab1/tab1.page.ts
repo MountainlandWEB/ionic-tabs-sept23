@@ -15,10 +15,10 @@ export class Tab1Page {
   }
 
   async openAbout() {
-    const modal = await this.modal.create({
+    const modal1 = await this.modal.create({
       component: AboutPage,
     });
     
-    modal.present();
+    modal1.present();
   }
 }
