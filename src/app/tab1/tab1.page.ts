@@ -14,6 +14,8 @@ export class Tab1Page {
 
   }
 
+  group = "friends";
+
   async openAbout() {
     const modal1 = await this.modal.create({
       component: AboutPage,

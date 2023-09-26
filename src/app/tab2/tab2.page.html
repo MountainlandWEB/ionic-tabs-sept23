@@ -9,7 +9,6 @@
 <ion-content>
 
   <ion-list lines="full">
-    <!-- <ion-item *ngFor="let friend of friends" (click)="goToFriend(friend)" detail> -->
     <ion-item *ngFor="let person of friends" [routerLink]="['person']" [state]="{ person }" detail>
       <ion-avatar slot="start">
         <img [src]="person.avatar">

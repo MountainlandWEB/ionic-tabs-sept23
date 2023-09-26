@@ -1,11 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-title>
-      Tab 3
+      People
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
+  <ion-searchbar [(ngModel)]="searchText" animated="true" (ionInput)="onInput($event)" [debounce]="500"></ion-searchbar>
+
+  <ion-item button *ngFor="let person of filteredList | async" detail (click)="goToPerson(person)">
+<ion-avatar slot="start">
+  <img [src]="person.avatar" alt="avatar">
+</ion-avatar>
+<ion-label>
+  {{ person.first_name }}
+  {{ person.last_name }},
+  {{ person.address.state }}
+</ion-label>
+</ion-item>
 
 </ion-content>
