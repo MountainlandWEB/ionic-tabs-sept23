@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-buttons slot="end">
-      <ion-button (click)="openAbout()">
+      <ion-button (click)="openAbout()" aria-label="about this app">
         <ion-icon slot="icon-only" name="help-circle-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -13,7 +13,12 @@
 
 <ion-content class="ion-padding">
 
-  <ion-button expand="block" href="/login">Logout</ion-button>
+  <ion-input type="number" label="Badge count" [(ngModel)]="badgeCount"></ion-input>
+  <ion-button color="secondary" expand="block" (click)="setBadgeCount()">Set Badge Count</ion-button>
+  <ion-button color="tertiary" expand="block" (click)="clearBadgeCount()">Mark All Read</ion-button>
+  <br />
+  <ion-button shape="round" color="hotbutton" expand="block" href="/login">Logout</ion-button>
+  <ion-button strong shape="round" color="hotbutton" expand="block" href="/login">Logout</ion-button>
 
   <ion-card>
     <ion-card-header>
@@ -26,7 +31,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-segment [value]="group">
+  <ion-segment color="hotbutton" [value]="group">
     <ion-segment-button value="friends">
       <ion-label>Friends</ion-label>
     </ion-segment-button>
@@ -38,6 +43,6 @@
     </ion-segment-button>
   </ion-segment>
 
-  <ion-button>test</ion-button>
+  <ion-button class="custom">test</ion-button>
 
 </ion-content>

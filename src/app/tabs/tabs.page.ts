@@ -1,4 +1,5 @@
-import { Component, EnvironmentInjector, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EnvironmentInjector, OnInit, inject } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -6,10 +7,18 @@ import { IonicModule } from '@ionic/angular';
   templateUrl: 'tabs.page.html',
   styleUrls: ['tabs.page.scss'],
   standalone: true,
-  imports: [IonicModule],
+  imports: [IonicModule, CommonModule],
 })
-export class TabsPage {
+export class TabsPage implements OnInit {
   public environmentInjector = inject(EnvironmentInjector);
 
   constructor() {}
+
+  badgeCount = 3;
+
+  ngOnInit() {
+    window.addEventListener('badgeCount', (e: any) =>  {
+      this.badgeCount = e['detail'];
+    });
+  }
 }

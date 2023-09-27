@@ -1,6 +1,8 @@
 <ion-tabs>
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="tab1" href="/tabs/tab1">
+      <!-- <ion-badge color="danger" [hidden]="!badgeCount">{{ badgeCount }}</ion-badge> -->
+      <ion-badge color="danger" *ngIf="badgeCount > 0">{{ badgeCount }}</ion-badge>
       <ion-icon aria-hidden="true" name="triangle"></ion-icon>
       <ion-label>Tab 1</ion-label>
     </ion-tab-button>
