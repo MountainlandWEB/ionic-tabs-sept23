@@ -10,6 +10,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
+    "pwa": "npx http-server-spa www ./index.html 8100",
     "assets": "npx @capacitor/assets generate --assetPath src/assets && mv icons -rf src/assets",
     "ios": "ng build && ionic cap sync ios",
     "android": "ng build && ionic cap sync android"
